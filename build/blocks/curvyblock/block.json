@@ -47,6 +47,14 @@
     "topHeight": {
       "type": "number",
       "default": 120
+    },
+    "topFlipX": {
+      "type": "boolean",
+      "default": false
+    },
+    "topFlipY": {
+      "type": "boolean",
+      "default": false
     }
   },
   "textdomain": "imaszcurvy",

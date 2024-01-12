@@ -1,6 +1,7 @@
 import {
 	HorizontalRule,
-  RangeControl
+  RangeControl,
+  ToggleControl
 } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import metadata from "../block.json";
@@ -31,6 +32,23 @@ export const TopCurveSettings = (props) => {
         }}
         label={__('Height', metadata.textdomain)}
       />
+      <HorizontalRule />
+      <div style={{display: 'flex'}}>
+        <ToggleControl onChange={(isChecked) => {
+          props.setAttributes({
+            topFlipX: isChecked
+          });
+        }} checked={props.attributes.topFlipX} />
+        <span>{__('Flip horizontally', metadata.textdomain)}</span>
+      </div>
+      <div style={{display: 'flex'}}>
+        <ToggleControl onChange={(isChecked) => {
+          props.setAttributes({
+            topFlipY: isChecked
+          });
+        }} checked={props.attributes.topFlipY} />
+        <span>{__('Flip vertically', metadata.textdomain)}</span>
+      </div>
     </>
   );
 }
