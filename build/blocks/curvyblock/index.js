@@ -116,18 +116,23 @@ const TopCurveSettings = props => {
       });
     },
     checked: props.attributes.topFlipY
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Flip vertically', _block_json__WEBPACK_IMPORTED_MODULE_4__.textdomain))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.HorizontalRule, null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Curve color', _block_json__WEBPACK_IMPORTED_MODULE_4__.textdomain)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.ColorPalette, {
-    disableCustomColors: true,
-    colors: [{
-      name: "Yellow",
-      color: "#FFFF00"
-    }, {
-      name: "Red",
-      color: "#FF0000"
-    }, {
-      name: "Blue",
-      color: "#0000FF"
-    }],
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Flip vertically', _block_json__WEBPACK_IMPORTED_MODULE_4__.textdomain))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.HorizontalRule, null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Curve color', _block_json__WEBPACK_IMPORTED_MODULE_4__.textdomain)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.ColorPalette
+  // disableCustomColors
+  // colors={[
+  // 	{
+  // 		name: "Yellow",
+  // 		color: "#FFFF00"
+  // 	},
+  // 	{
+  // 		name: "Red",
+  // 		color: "#FF0000"
+  // 	},
+  // 	{
+  // 		name: "Blue",
+  // 		color: "#0000FF"
+  // 	}
+  // ]}
+  , {
     value: props.attributes.topColor,
     onChange: newValue => {
       props.setAttributes({

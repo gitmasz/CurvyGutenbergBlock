@@ -54,21 +54,21 @@ export const TopCurveSettings = (props) => {
       <div>
         <label>{__('Curve color', metadata.textdomain)}</label>
         <ColorPalette
-          disableCustomColors
-          colors={[
-          	{
-          		name: "Yellow",
-          		color: "#FFFF00"
-          	},
-          	{
-          		name: "Red",
-          		color: "#FF0000"
-          	},
-          	{
-          		name: "Blue",
-          		color: "#0000FF"
-          	}
-          ]}
+          // disableCustomColors
+          // colors={[
+          // 	{
+          // 		name: "Yellow",
+          // 		color: "#FFFF00"
+          // 	},
+          // 	{
+          // 		name: "Red",
+          // 		color: "#FF0000"
+          // 	},
+          // 	{
+          // 		name: "Blue",
+          // 		color: "#0000FF"
+          // 	}
+          // ]}
           value={props.attributes.topColor}
           onChange={(newValue) => {
             props.setAttributes({
