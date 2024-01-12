@@ -3,6 +3,7 @@ import {
   RangeControl,
   ToggleControl
 } from "@wordpress/components";
+import { ColorPalette } from "@wordpress/block-editor";
 import { __ } from "@wordpress/i18n";
 import metadata from "../block.json";
 
@@ -48,6 +49,18 @@ export const TopCurveSettings = (props) => {
           });
         }} checked={props.attributes.topFlipY} />
         <span>{__('Flip vertically', metadata.textdomain)}</span>
+      </div>
+      <HorizontalRule />
+      <div>
+        <label>{__('Curve color', metadata.textdomain)}</label>
+        <ColorPalette
+          value={props.attributes.topColor}
+          onChange={(newValue) => {
+            props.setAttributes({
+              topColor: newValue
+            });
+          }}
+        />
       </div>
     </>
   );

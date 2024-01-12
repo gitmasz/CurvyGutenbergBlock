@@ -47,6 +47,7 @@ export default function Edit(props) {
 			<section className={`${className} alignfull`} {...blockProps}>
 				{props.attributes.enableTopCurve && (
 					<Curve
+						color={props.attributes.topColor}
 						flipX={props.attributes.topFlipX}
 						flipY={props.attributes.topFlipY}
 						height={props.attributes.topHeight}
@@ -55,7 +56,7 @@ export default function Edit(props) {
 				)}
 			</section>
 			<InspectorControls>
-				<PanelBody title={__('Settings title', metadata.textdomain)}>
+				<PanelBody title={__('Top Curve', metadata.textdomain)}>
 					<div style={{display: 'flex'}}>
 						<ToggleControl onChange={(isChecked) => {
 							props.setAttributes({
