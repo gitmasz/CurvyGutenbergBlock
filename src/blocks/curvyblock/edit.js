@@ -36,15 +36,14 @@ import './editor.scss';
  * @return {Element} Element to render.
  */
 import metadata from './block.json';
+import { Curve } from './components/curve';
 
 export default function Edit(props) {
 	const { className, ...blockProps } = useBlockProps();
 	return (
 		<>
 			<section className={`${className} alignfull`} {...blockProps}>
-				<p { ...useBlockProps() }>
-					{__('Curvy – hello from the editor!', metadata.textdomain)}
-				</p>
+				<Curve />
 			</section>
 			<InspectorControls>
 				<PanelBody title={__('Settings title', metadata.textdomain)}>
