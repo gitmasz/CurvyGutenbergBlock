@@ -39,6 +39,14 @@
     "enableTopCurve": {
       "type": "boolean",
       "default": true
+    },
+    "topWidth": {
+      "type": "number",
+      "default": 120
+    },
+    "topHeight": {
+      "type": "number",
+      "default": 120
     }
   },
   "textdomain": "imaszcurvy",

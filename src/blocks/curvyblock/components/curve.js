@@ -8,7 +8,7 @@ export const Curve = (props) => {
         left: 0,
         width: "100%",
         overflow: "hidden",
-        height: "120px"
+        height: props.height
       }}
     >
       <svg
@@ -17,8 +17,8 @@ export const Curve = (props) => {
           position: "absolute",
           top: 0,
           left: 0,
-          height: "120px",
-          width: "100%"
+          height: props.height,
+          width: `${props.width}%`
         }}
         viewBox="0 0 1200 120"
       >
