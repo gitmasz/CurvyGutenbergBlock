@@ -315,7 +315,7 @@ function Edit(props) {
     flipY: props.attributes.topFlipY,
     height: props.attributes.topHeight,
     width: props.attributes.topWidth
-  }), props.attributes.enableBottomCurve && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_curve__WEBPACK_IMPORTED_MODULE_6__.Curve, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, null), props.attributes.enableBottomCurve && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_curve__WEBPACK_IMPORTED_MODULE_6__.Curve, {
     isBottom: true,
     color: props.attributes.bottomColor,
     flipX: props.attributes.bottomFlipX,
@@ -446,9 +446,11 @@ __webpack_require__.r(__webpack_exports__);
  * @return {Element} Element to render.
  */
 function save() {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
-  }, 'Curvy – hello from the saved content!');
+  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save();
+  const innerBlocksProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useInnerBlocksProps.save(blockProps);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...innerBlocksProps
+  });
 }
 
 /***/ }),
