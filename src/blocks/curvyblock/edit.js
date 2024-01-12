@@ -35,17 +35,19 @@ import './editor.scss';
  *
  * @return {Element} Element to render.
  */
+import metadata from './block.json';
+
 export default function Edit() {
 	return (
 		<>
 			<p { ...useBlockProps() }>
-				{ __( 'Curvy – hello from the editor!', 'curvy' ) }
+				{__('Curvy – hello from the editor!', metadata.textdomain)}
 			</p>
-			<div>Test content!</div>
+			<div>{__('Test content!', metadata.textdomain)}</div>
 			<InspectorControls>
-				<PanelBody title="Settings title">
+				<PanelBody title={__('Settings title', metadata.textdomain)}>
 					<div>
-						Settings content.
+						{__('Settings content.', metadata.textdomain)}
 					</div>
 				</PanelBody>
 			</InspectorControls>
