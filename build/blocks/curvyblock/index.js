@@ -247,7 +247,7 @@ module.exports = window["wp"]["i18n"];
   \******************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"imaszcurvy/curvyblock","version":"0.1.0","title":"Curvy Block","category":"widgets","icon":"smiley","description":"Curvy shape dividers to make dividing page content more interesting.","example":{},"supports":{"html":false},"textdomain":"imaszcurvy","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"imaszcurvy/curvyblock","version":"0.1.0","title":"Curvy Block","category":"widgets","icon":"smiley","description":"Curvy shape dividers to make dividing page content more interesting.","example":{},"supports":{"html":false,"color":{"background":true,"link":true,"text":true},"spacing":{"padding":true}},"attributes":{"style":{"type":"object","default":{"color":{"background":"#ec4899"},"spacing":{"padding":{"top":"80px","bottom":"80px","left":"50px","right":"50px"}}}}},"textdomain":"imaszcurvy","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 
