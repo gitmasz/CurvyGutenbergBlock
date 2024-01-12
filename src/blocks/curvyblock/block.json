@@ -59,6 +59,30 @@
 		"topColor": {
 			"type": "string",
 			"default": "#ffffff"
+		},
+		"enableBottomCurve": {
+			"type": "boolean",
+			"default": true
+		},
+		"bottomWidth": {
+			"type": "number",
+			"default": 120
+		},
+		"bottomHeight": {
+			"type": "number",
+			"default": 120
+		},
+		"bottomFlipX": {
+			"type": "boolean",
+			"default": false
+		},
+		"bottomFlipY": {
+			"type": "boolean",
+			"default": false
+		},
+		"bottomColor": {
+			"type": "string",
+			"default": "#ffffff"
 		}
 	},
 	"textdomain": "imaszcurvy",

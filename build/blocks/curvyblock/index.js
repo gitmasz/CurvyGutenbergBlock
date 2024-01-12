@@ -2,6 +2,101 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/blocks/curvyblock/components/bottomCurveSettings.js":
+/*!*****************************************************************!*\
+  !*** ./src/blocks/curvyblock/components/bottomCurveSettings.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BottomCurveSettings: () => (/* binding */ BottomCurveSettings)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../block.json */ "./src/blocks/curvyblock/block.json");
+
+
+
+
+
+const BottomCurveSettings = props => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.HorizontalRule, null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    min: 100,
+    max: 300,
+    value: props.attributes.bottomWidth || 100,
+    onChange: newValue => {
+      props.setAttributes({
+        bottomWidth: parseInt(newValue)
+      });
+    },
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Width', _block_json__WEBPACK_IMPORTED_MODULE_4__.textdomain)
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    min: 0,
+    max: 200,
+    value: props.attributes.bottomHeight,
+    onChange: newValue => {
+      props.setAttributes({
+        bottomHeight: parseInt(newValue)
+      });
+    },
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Height', _block_json__WEBPACK_IMPORTED_MODULE_4__.textdomain)
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.HorizontalRule, null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      display: 'flex'
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    onChange: isChecked => {
+      props.setAttributes({
+        bottomFlipX: isChecked
+      });
+    },
+    checked: props.attributes.bottomFlipX
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Flip horizontally', _block_json__WEBPACK_IMPORTED_MODULE_4__.textdomain))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      display: 'flex'
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    onChange: isChecked => {
+      props.setAttributes({
+        bottomFlipY: isChecked
+      });
+    },
+    checked: props.attributes.bottomFlipY
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Flip vertically', _block_json__WEBPACK_IMPORTED_MODULE_4__.textdomain))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.HorizontalRule, null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Curve color', _block_json__WEBPACK_IMPORTED_MODULE_4__.textdomain)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.ColorPalette
+  // disableCustomColors
+  // colors={[
+  // 	{
+  // 		name: "Yellow",
+  // 		color: "#FFFF00"
+  // 	},
+  // 	{
+  // 		name: "Red",
+  // 		color: "#FF0000"
+  // 	},
+  // 	{
+  // 		name: "Blue",
+  // 		color: "#0000FF"
+  // 	}
+  // ]}
+  , {
+    value: props.attributes.bottomColor,
+    onChange: newValue => {
+      props.setAttributes({
+        bottomColor: newValue
+      });
+    }
+  })));
+};
+
+/***/ }),
+
 /***/ "./src/blocks/curvyblock/components/curve.js":
 /*!***************************************************!*\
   !*** ./src/blocks/curvyblock/components/curve.js ***!
@@ -21,13 +116,15 @@ const Curve = props => {
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: {
       position: "absolute",
-      top: 0,
+      top: !props.isBottom ? 0 : "initial",
+      bottom: props.isBottom ? 0 : "initial",
       left: 0,
       width: "100%",
       overflow: "hidden",
       height: props.height,
       transform: `scaleX(${props.flipX ? -1 : 1})
-                    rotate(${props.flipY ? "180deg" : 0})`
+                    rotate(${props.flipY ? "180deg" : 0})
+                    scaleY(${props.isBottom ? -1 : 1})`
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     preserveAspectRatio: "none",
@@ -166,6 +263,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block.json */ "./src/blocks/curvyblock/block.json");
 /* harmony import */ var _components_curve__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/curve */ "./src/blocks/curvyblock/components/curve.js");
 /* harmony import */ var _components_topCurveSettings__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/topCurveSettings */ "./src/blocks/curvyblock/components/topCurveSettings.js");
+/* harmony import */ var _components_bottomCurveSettings__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/bottomCurveSettings */ "./src/blocks/curvyblock/components/bottomCurveSettings.js");
 
 /**
  * Retrieves the translation of text.
@@ -202,6 +300,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 function Edit(props) {
   const {
     className,
@@ -216,6 +315,13 @@ function Edit(props) {
     flipY: props.attributes.topFlipY,
     height: props.attributes.topHeight,
     width: props.attributes.topWidth
+  }), props.attributes.enableBottomCurve && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_curve__WEBPACK_IMPORTED_MODULE_6__.Curve, {
+    isBottom: true,
+    color: props.attributes.bottomColor,
+    flipX: props.attributes.bottomFlipX,
+    flipY: props.attributes.bottomFlipY,
+    height: props.attributes.bottomHeight,
+    width: props.attributes.bottomWidth
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Top Curve', _block_json__WEBPACK_IMPORTED_MODULE_5__.textdomain)
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -230,6 +336,22 @@ function Edit(props) {
     },
     checked: props.attributes.enableTopCurve
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enable top curve', _block_json__WEBPACK_IMPORTED_MODULE_5__.textdomain))), props.attributes.enableTopCurve && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_topCurveSettings__WEBPACK_IMPORTED_MODULE_7__.TopCurveSettings, {
+    attributes: props.attributes,
+    setAttributes: props.setAttributes
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Bottom Curve', _block_json__WEBPACK_IMPORTED_MODULE_5__.textdomain)
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      display: 'flex'
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    onChange: isChecked => {
+      props.setAttributes({
+        enableBottomCurve: isChecked
+      });
+    },
+    checked: props.attributes.enableBottomCurve
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enable bottom curve', _block_json__WEBPACK_IMPORTED_MODULE_5__.textdomain))), props.attributes.enableBottomCurve && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_bottomCurveSettings__WEBPACK_IMPORTED_MODULE_8__.BottomCurveSettings, {
     attributes: props.attributes,
     setAttributes: props.setAttributes
   }))));
@@ -411,7 +533,7 @@ module.exports = window["wp"]["i18n"];
   \******************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"imaszcurvy/curvyblock","version":"0.1.0","title":"Curvy Block","category":"widgets","icon":"smiley","description":"Curvy shape dividers to make dividing page content more interesting.","example":{},"supports":{"html":false,"color":{"background":true,"link":true,"text":true},"spacing":{"padding":true}},"attributes":{"style":{"type":"object","default":{"color":{"background":"#ec4899"},"spacing":{"padding":{"top":"80px","bottom":"80px","left":"50px","right":"50px"}}}},"enableTopCurve":{"type":"boolean","default":true},"topWidth":{"type":"number","default":120},"topHeight":{"type":"number","default":120},"topFlipX":{"type":"boolean","default":false},"topFlipY":{"type":"boolean","default":false},"topColor":{"type":"string","default":"#ffffff"}},"textdomain":"imaszcurvy","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"imaszcurvy/curvyblock","version":"0.1.0","title":"Curvy Block","category":"widgets","icon":"smiley","description":"Curvy shape dividers to make dividing page content more interesting.","example":{},"supports":{"html":false,"color":{"background":true,"link":true,"text":true},"spacing":{"padding":true}},"attributes":{"style":{"type":"object","default":{"color":{"background":"#ec4899"},"spacing":{"padding":{"top":"80px","bottom":"80px","left":"50px","right":"50px"}}}},"enableTopCurve":{"type":"boolean","default":true},"topWidth":{"type":"number","default":120},"topHeight":{"type":"number","default":120},"topFlipX":{"type":"boolean","default":false},"topFlipY":{"type":"boolean","default":false},"topColor":{"type":"string","default":"#ffffff"},"enableBottomCurve":{"type":"boolean","default":true},"bottomWidth":{"type":"number","default":120},"bottomHeight":{"type":"number","default":120},"bottomFlipX":{"type":"boolean","default":false},"bottomFlipY":{"type":"boolean","default":false},"bottomColor":{"type":"string","default":"#ffffff"}},"textdomain":"imaszcurvy","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 
