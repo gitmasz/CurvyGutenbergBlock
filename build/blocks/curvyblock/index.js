@@ -110,9 +110,20 @@ function Edit(props) {
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
     className: `${className} alignfull`,
     ...blockProps
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_curve__WEBPACK_IMPORTED_MODULE_6__.Curve, null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+  }, props.attributes.enableTopCurve && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_curve__WEBPACK_IMPORTED_MODULE_6__.Curve, null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Settings title', _block_json__WEBPACK_IMPORTED_MODULE_5__.textdomain)
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Settings content.', _block_json__WEBPACK_IMPORTED_MODULE_5__.textdomain)))));
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      display: 'flex'
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    onChange: isChecked => {
+      props.setAttributes({
+        enableTopCurve: isChecked
+      });
+    },
+    checked: props.attributes.enableTopCurve
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enable top curve', _block_json__WEBPACK_IMPORTED_MODULE_5__.textdomain))))));
 }
 
 /***/ }),
@@ -291,7 +302,7 @@ module.exports = window["wp"]["i18n"];
   \******************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"imaszcurvy/curvyblock","version":"0.1.0","title":"Curvy Block","category":"widgets","icon":"smiley","description":"Curvy shape dividers to make dividing page content more interesting.","example":{},"supports":{"html":false,"color":{"background":true,"link":true,"text":true},"spacing":{"padding":true}},"attributes":{"style":{"type":"object","default":{"color":{"background":"#ec4899"},"spacing":{"padding":{"top":"80px","bottom":"80px","left":"50px","right":"50px"}}}}},"textdomain":"imaszcurvy","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"imaszcurvy/curvyblock","version":"0.1.0","title":"Curvy Block","category":"widgets","icon":"smiley","description":"Curvy shape dividers to make dividing page content more interesting.","example":{},"supports":{"html":false,"color":{"background":true,"link":true,"text":true},"spacing":{"padding":true}},"attributes":{"style":{"type":"object","default":{"color":{"background":"#ec4899"},"spacing":{"padding":{"top":"80px","bottom":"80px","left":"50px","right":"50px"}}}},"enableTopCurve":{"type":"boolean","default":true}},"textdomain":"imaszcurvy","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 

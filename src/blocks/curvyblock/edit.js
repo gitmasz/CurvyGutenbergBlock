@@ -16,7 +16,8 @@ import {
 	InspectorControls
 } from '@wordpress/block-editor';
 import {
-	PanelBody
+	PanelBody,
+	ToggleControl
 } from '@wordpress/components';
 
 /**
@@ -43,12 +44,19 @@ export default function Edit(props) {
 	return (
 		<>
 			<section className={`${className} alignfull`} {...blockProps}>
-				<Curve />
+				{props.attributes.enableTopCurve && (
+					<Curve />
+				)}
 			</section>
 			<InspectorControls>
 				<PanelBody title={__('Settings title', metadata.textdomain)}>
-					<div>
-						{__('Settings content.', metadata.textdomain)}
+					<div style={{display: 'flex'}}>
+						<ToggleControl onChange={(isChecked) => {
+							props.setAttributes({
+								enableTopCurve: isChecked
+							});
+						}} checked={props.attributes.enableTopCurve} />
+						<span>{__('Enable top curve', metadata.textdomain)}</span>
 					</div>
 				</PanelBody>
 			</InspectorControls>

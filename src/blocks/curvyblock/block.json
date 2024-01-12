@@ -35,6 +35,10 @@
 					}
 				}
 			}
+		},
+		"enableTopCurve": {
+			"type": "boolean",
+			"default": true
 		}
 	},
 	"textdomain": "imaszcurvy",
