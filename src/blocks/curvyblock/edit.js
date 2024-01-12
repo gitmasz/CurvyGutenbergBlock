@@ -37,13 +37,15 @@ import './editor.scss';
  */
 import metadata from './block.json';
 
-export default function Edit() {
+export default function Edit(props) {
+	const { className, ...blockProps } = useBlockProps();
 	return (
 		<>
-			<p { ...useBlockProps() }>
-				{__('Curvy – hello from the editor!', metadata.textdomain)}
-			</p>
-			<div>{__('Test content!', metadata.textdomain)}</div>
+			<section className={`${className} alignfull`} {...blockProps}>
+				<p { ...useBlockProps() }>
+					{__('Curvy – hello from the editor!', metadata.textdomain)}
+				</p>
+			</section>
 			<InspectorControls>
 				<PanelBody title={__('Settings title', metadata.textdomain)}>
 					<div>
