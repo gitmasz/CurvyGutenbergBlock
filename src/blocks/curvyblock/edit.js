@@ -38,6 +38,7 @@ import './editor.scss';
  */
 import metadata from './block.json';
 import { Curve } from './components/curve';
+import { TopCurveSettings } from './components/topCurveSettings';
 
 export default function Edit(props) {
 	const { className, ...blockProps } = useBlockProps();
@@ -58,6 +59,12 @@ export default function Edit(props) {
 						}} checked={props.attributes.enableTopCurve} />
 						<span>{__('Enable top curve', metadata.textdomain)}</span>
 					</div>
+					{props.attributes.enableTopCurve && 
+						<TopCurveSettings
+							attributes={props.attributes}
+							setAttributes={props.setAttributes}
+						/>
+					}
 				</PanelBody>
 			</InspectorControls>
 		</>

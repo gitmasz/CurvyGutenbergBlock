@@ -46,6 +46,28 @@ const Curve = props => {
 
 /***/ }),
 
+/***/ "./src/blocks/curvyblock/components/topCurveSettings.js":
+/*!**************************************************************!*\
+  !*** ./src/blocks/curvyblock/components/topCurveSettings.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   TopCurveSettings: () => (/* binding */ TopCurveSettings)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const TopCurveSettings = props => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.HorizontalRule, null), "Enabled top curve settings content.");
+};
+
+/***/ }),
+
 /***/ "./src/blocks/curvyblock/edit.js":
 /*!***************************************!*\
   !*** ./src/blocks/curvyblock/edit.js ***!
@@ -67,6 +89,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/curvyblock/editor.scss");
 /* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block.json */ "./src/blocks/curvyblock/block.json");
 /* harmony import */ var _components_curve__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/curve */ "./src/blocks/curvyblock/components/curve.js");
+/* harmony import */ var _components_topCurveSettings__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/topCurveSettings */ "./src/blocks/curvyblock/components/topCurveSettings.js");
 
 /**
  * Retrieves the translation of text.
@@ -102,6 +125,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 
+
 function Edit(props) {
   const {
     className,
@@ -123,7 +147,10 @@ function Edit(props) {
       });
     },
     checked: props.attributes.enableTopCurve
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enable top curve', _block_json__WEBPACK_IMPORTED_MODULE_5__.textdomain))))));
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enable top curve', _block_json__WEBPACK_IMPORTED_MODULE_5__.textdomain))), props.attributes.enableTopCurve && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_topCurveSettings__WEBPACK_IMPORTED_MODULE_7__.TopCurveSettings, {
+    attributes: props.attributes,
+    setAttributes: props.setAttributes
+  }))));
 }
 
 /***/ }),
