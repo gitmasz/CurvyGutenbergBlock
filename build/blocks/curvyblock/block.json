@@ -19,6 +19,24 @@
       "padding": true
     }
   },
+  "variations": [
+    {
+      "name": "top-only",
+      "title": "Curvy Block - top only",
+      "attributes": {
+        "enableBottomCurve": false,
+        "enableTopCurve": true
+      }
+    },
+    {
+      "name": "tobottomp-only",
+      "title": "Curvy Block - bottom only",
+      "attributes": {
+        "enableBottomCurve": true,
+        "enableTopCurve": false
+      }
+    }
+  ],
   "attributes": {
     "style": {
       "type": "object",
