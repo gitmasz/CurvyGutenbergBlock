@@ -594,6 +594,12 @@ __webpack_require__.r(__webpack_exports__);
       transform: attributes => {
         return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.createBlock)("imaszcurvy/curvyblock", {}, [(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.createBlock)("core/paragraph", attributes)]);
       }
+    }, {
+      type: "block",
+      blocks: ["core/heading"],
+      transform: attributes => {
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.createBlock)("imaszcurvy/curvyblock", {}, [(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.createBlock)("core/heading", attributes)]);
+      }
     }]
   }
 });

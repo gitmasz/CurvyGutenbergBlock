@@ -42,14 +42,25 @@ registerBlockType( metadata.name, {
 	save,
 	icon: <img src={icon} />,
 	transforms: {
-		from: [{
-			type: "block",
-			blocks: ["core/paragraph"],
-			transform: (attributes) => {
-				return createBlock("imaszcurvy/curvyblock", {}, [
-					createBlock("core/paragraph", attributes)
-				])
+		from: [
+			{
+				type: "block",
+				blocks: ["core/paragraph"],
+				transform: (attributes) => {
+					return createBlock("imaszcurvy/curvyblock", {}, [
+						createBlock("core/paragraph", attributes)
+					])
+				},
 			},
-		}]
+			{
+				type: "block",
+				blocks: ["core/heading"],
+				transform: (attributes) => {
+					return createBlock("imaszcurvy/curvyblock", {}, [
+						createBlock("core/heading", attributes)
+					])
+				},
+			}
+		]
 	}
 } );
