@@ -8,9 +8,9 @@
  * Replace them with your own styles or remove the file completely.
  */
 .wp-block-imaszcurvy-curvyblock {
-  background-color: #21759b;
-  color: #fff;
-  padding: 2px;
+  position: relative;
+  background: #ec4899;
+  padding: 80px 50px;
 }
 
 /*# sourceMappingURL=style-index.css.map*/
