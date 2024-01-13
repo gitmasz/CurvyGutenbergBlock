@@ -6,6 +6,7 @@ $normalPath = "M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-
 $invertedPath = "M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z";
 
 $topTransform = "scaleX(" . ($attributes['topFlipX'] ? "-1" : "1") . ") rotate(" . ($attributes['topFlipY'] ? "180deg" : "0") . ")";
+$bottomTransform = "scaleY(-1) scaleX(" . ($attributes['bottomFlipX'] ? "-1" : "1") . ") rotate(" . ($attributes['bottomFlipY'] ? "180deg" : "0") . ")";
 
 // wp_send_json($block_wrapper_attributes);
 ?>
@@ -16,4 +17,9 @@ $topTransform = "scaleX(" . ($attributes['topFlipX'] ? "-1" : "1") . ") rotate("
     </svg>
   </div>
   <? echo $content; ?>
+  <div class="curve bottom-curve" style="height: <? echo $attributes['bottomHeight']; ?>px">
+    <svg style="transform: <? echo $bottomTransform; ?>; height: <? echo $attributes['bottomHeight']; ?>px; width: <? echo $attributes['bottomWidth']; ?>%" preserveAspectRatio="none" viewBox="0 0 1200 120">
+      <path fill="<? echo $attributes['bottomColor'] ?? "#ffffff"; ?>" d="<? echo $attributes['bottomFlipY'] ? $invertedPath : $normalPath; ?>"></path>
+    </svg>
+  </div>
 </div>

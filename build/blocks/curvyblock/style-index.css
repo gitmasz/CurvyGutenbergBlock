@@ -21,6 +21,9 @@
 .wp-block-imaszcurvy-curvyblock .curve.top-curve {
   top: 0;
 }
+.wp-block-imaszcurvy-curvyblock .curve.bottom-curve {
+  bottom: 0;
+}
 .wp-block-imaszcurvy-curvyblock .curve svg {
   position: absolute;
   top: 0;
