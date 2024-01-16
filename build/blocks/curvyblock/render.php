@@ -10,20 +10,20 @@ $bottomTransform = "scaleY(-1) scaleX(" . ($attributes['bottomFlipX'] ? "-1" : "
 
 // wp_send_json($block_wrapper_attributes);
 ?>
-<div <? echo $block_wrapper_attributes; ?>>
-  <? if($attributes['enableTopCurve']) : ?>
-  <div class="curve top-curve" style="height: <? echo $attributes['topHeight']; ?>px">
-    <svg style="transform: <? echo $topTransform; ?>; height: <? echo $attributes['topHeight']; ?>px; width: <? echo $attributes['topWidth']; ?>%" preserveAspectRatio="none" viewBox="0 0 1200 120">
-      <path fill="<? echo $attributes['topColor'] ?? "#ffffff"; ?>" d="<? echo $attributes['topFlipY'] ? $invertedPath : $normalPath; ?>"></path>
+<div <?php echo $block_wrapper_attributes; ?>>
+  <?php if($attributes['enableTopCurve']) : ?>
+  <div class="curve top-curve" style="height: <?php echo $attributes['topHeight']; ?>px">
+    <svg style="transform: <?php echo $topTransform; ?>; height: <?php echo $attributes['topHeight']; ?>px; width: <?php echo $attributes['topWidth']; ?>%" preserveAspectRatio="none" viewBox="0 0 1200 120">
+      <path fill="<?php echo $attributes['topColor'] ?? "#ffffff"; ?>" d="<?php echo $attributes['topFlipY'] ? $invertedPath : $normalPath; ?>"></path>
     </svg>
   </div>
-  <? endif ?>
-  <? echo $content; ?>
-  <? if($attributes['enableBottomCurve']) : ?>
-  <div class="curve bottom-curve" style="height: <? echo $attributes['bottomHeight']; ?>px">
-    <svg style="transform: <? echo $bottomTransform; ?>; height: <? echo $attributes['bottomHeight']; ?>px; width: <? echo $attributes['bottomWidth']; ?>%" preserveAspectRatio="none" viewBox="0 0 1200 120">
-      <path fill="<? echo $attributes['bottomColor'] ?? "#ffffff"; ?>" d="<? echo $attributes['bottomFlipY'] ? $invertedPath : $normalPath; ?>"></path>
+  <?php endif ?>
+  <?php echo $content; ?>
+  <?php if($attributes['enableBottomCurve']) : ?>
+  <div class="curve bottom-curve" style="height: <?php echo $attributes['bottomHeight']; ?>px">
+    <svg style="transform: <?php echo $bottomTransform; ?>; height: <?php echo $attributes['bottomHeight']; ?>px; width: <?php echo $attributes['bottomWidth']; ?>%" preserveAspectRatio="none" viewBox="0 0 1200 120">
+      <path fill="<?php echo $attributes['bottomColor'] ?? "#ffffff"; ?>" d="<?php echo $attributes['bottomFlipY'] ? $invertedPath : $normalPath; ?>"></path>
     </svg>
   </div>
-  <? endif ?>
+  <?php endif ?>
 </div>
