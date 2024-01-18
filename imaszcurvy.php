@@ -13,6 +13,8 @@
  * @package           create-block
  */
 
+namespace iMaSzPlugins;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -24,16 +26,19 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function create_custom_block_category($categories){
-	array_unshift($categories, [
-		'slug' => 'imaszcurvy',
-		'title' => 'iMaSz Curvy'
-	]);
-	return $categories;
+final class iMaSzCurvy {
+	static function init(){
+		add_action( 'init', function(){
+			add_filter('block_categories_all', function($categories){
+				array_unshift($categories, [
+					'slug' => 'imaszcurvy',
+					'title' => 'iMaSz Curvy'
+				]);
+				return $categories;
+			});
+			register_block_type( __DIR__ . '/build/blocks/curvyblock' );
+		});
+	}
 }
 
-function imaszcurvy_block_init() {
-	add_filter('block_categories_all', 'create_custom_block_category');
-	register_block_type( __DIR__ . '/build/blocks/curvyblock' );
-}
-add_action( 'init', 'imaszcurvy_block_init' );
+iMaSzCurvy::init();
