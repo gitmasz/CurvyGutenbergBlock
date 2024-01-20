@@ -38,6 +38,28 @@ final class iMaSzCurvy {
 			});
 			register_block_type( __DIR__ . '/build/blocks/curvyblock' );
 		});
+
+		register_block_pattern_category('imaszcurvy', array(
+			'label' => __('iMaSz Curvy', 'imaszcurvy')
+		));
+		register_block_pattern('imaszcurvy/clicky-example', array(
+			'categories' => array('banners', 'imaszcurvy'),
+			'title' => __('Curvy banner', 'imaszcurvy'),
+			'description' => __('A heading and paragraph in curvy block', 'imaszcurvy'),
+			'content' => '<!-- wp:imaszcurvy/curvyblock {"style":{"spacing":{"padding":{"top":"120px","left":"20px","right":"20px","bottom":"120px"}}},"topWidth":200,"bottomWidth":150,"backgroundColor":"cyan-bluish-gray"} -->
+			<!-- wp:columns -->
+			<div class="wp-block-columns"><!-- wp:column {"width":"100%","layout":{"type":"constrained","wideSize":"900px"}} -->
+			<div class="wp-block-column" style="flex-basis:100%"><!-- wp:heading -->
+			<h2 class="wp-block-heading">Example title</h2>
+			<!-- /wp:heading -->
+			
+			<!-- wp:paragraph -->
+			<p>Example lorem ipsum text.</p>
+			<!-- /wp:paragraph --></div>
+			<!-- /wp:column --></div>
+			<!-- /wp:columns -->
+			<!-- /wp:imaszcurvy/curvyblock -->'
+		));
 	}
 }
 
