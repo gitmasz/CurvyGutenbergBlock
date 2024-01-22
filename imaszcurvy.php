@@ -28,6 +28,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 final class iMaSzCurvy {
 	static function init(){
+		add_action('enqueue_block_assets', function () {
+			$style_url = plugins_url("build/style-index.css", __FILE__);
+			wp_enqueue_style('blockylicious-style', $style_url, array());
+		});
 		add_action( 'init', function(){
 			add_filter('block_categories_all', function($categories){
 				array_unshift($categories, [
@@ -62,6 +66,8 @@ final class iMaSzCurvy {
 		));
 		$script_url = plugins_url('build/index.js', __FILE__);
 		wp_enqueue_script('imaszcurvy-index', $script_url, array('wp-blocks', 'wp-element', 'wp-editor'));
+		$style_url = plugins_url("build/style-index.css", __FILE__);
+		wp_enqueue_style('imaszcurvy-style', $style_url, array());
 	}
 }
 

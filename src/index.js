@@ -1,9 +1,10 @@
 import {
 	registerFormatType,
-  applyFormat
+  toggleFormat
 } from "@wordpress/rich-text";
 import { __ } from "@wordpress/i18n";
 import { RichTextToolbarButton } from "@wordpress/block-editor";
+import "./style.scss";
 
 registerFormatType("imaszcurvy/low-highlight", {
 	title: __("Low highlight", "imaszcurvy"),
@@ -16,9 +17,8 @@ registerFormatType("imaszcurvy/low-highlight", {
 					icon={<div>Test</div>}
 					title={__("Low highlight", "imaszcurvy")}
 					onClick={() => {
-            console.log({ value });
             onChange(
-              applyFormat(
+              toggleFormat(
                 value,
                 {
                   type: "imaszcurvy/low-highlight",
