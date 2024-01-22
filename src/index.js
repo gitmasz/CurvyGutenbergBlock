@@ -13,13 +13,15 @@ import {
   Popover,
   PanelBody
 } from "@wordpress/components";
+import lowHighlightIcon from "./assets/low-highlight.svg";
+import lowHighlightIconActive from "./assets/low-highlight-active.svg";
 import "./style.scss";
 
 registerFormatType("imaszcurvy/low-highlight", {
 	title: __("Low highlight", "imaszcurvy"),
 	tagName: "span",
 	className: "imaszcurvy-low-highlight",
-  edit: ({onChange, value, contentRef}) => {
+  edit: ({onChange, value, contentRef, isActive}) => {
     const [showColors, setShowColors] = useState(false);
 		const lowHighlight = value.activeFormats?.find(
 			(format) => format.type === "imaszcurvy/low-highlight"
@@ -31,7 +33,13 @@ registerFormatType("imaszcurvy/low-highlight", {
     return (
       <>
 				<RichTextToolbarButton
-					icon={<div>Test</div>}
+					icon={
+						<img
+							height={24}
+							width={24}
+							src={isActive ? lowHighlightIconActive : lowHighlightIcon}
+						/>
+          }
 					title={__("Low highlight", "imaszcurvy")}
 					onClick={() => {
             setShowColors(true)
