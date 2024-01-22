@@ -21,6 +21,13 @@ registerFormatType("imaszcurvy/low-highlight", {
 	className: "imaszcurvy-low-highlight",
   edit: ({onChange, value, contentRef}) => {
     const [showColors, setShowColors] = useState(false);
+		const lowHighlight = value.activeFormats?.find(
+			(format) => format.type === "imaszcurvy/low-highlight"
+		);
+		const attributes = {
+			...(lowHighlight?.attributes || {}),
+			...(lowHighlight?.unregisteredAttributes || {}),
+		};
     return (
       <>
 				<RichTextToolbarButton
@@ -39,11 +46,16 @@ registerFormatType("imaszcurvy/low-highlight", {
           >
             <PanelBody>
               <ColorPalette
+                value={attributes?.["data-color"]}
                 onChange={(newValue) => {
 									if (newValue) {
 										onChange(
 											applyFormat(value, {
-                        type: "imaszcurvy/low-highlight"
+                        type: "imaszcurvy/low-highlight",
+												attributes: {
+                          "data-color": newValue,
+													style: `background-image: linear-gradient(to right, ${newValue}, ${newValue})`,
+												}
                       })
 										);
 									} else {

@@ -39,6 +39,11 @@ __webpack_require__.r(__webpack_exports__);
     contentRef
   }) => {
     const [showColors, setShowColors] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
+    const lowHighlight = value.activeFormats?.find(format => format.type === "imaszcurvy/low-highlight");
+    const attributes = {
+      ...(lowHighlight?.attributes || {}),
+      ...(lowHighlight?.unregisteredAttributes || {})
+    };
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichTextToolbarButton, {
       icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, "Test"),
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Low highlight", "imaszcurvy"),
@@ -51,10 +56,15 @@ __webpack_require__.r(__webpack_exports__);
         setShowColors(false);
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.PanelBody, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.ColorPalette, {
+      value: attributes?.["data-color"],
       onChange: newValue => {
         if (newValue) {
           onChange((0,_wordpress_rich_text__WEBPACK_IMPORTED_MODULE_1__.applyFormat)(value, {
-            type: "imaszcurvy/low-highlight"
+            type: "imaszcurvy/low-highlight",
+            attributes: {
+              "data-color": newValue,
+              style: `background-image: linear-gradient(to right, ${newValue}, ${newValue})`
+            }
           }));
         } else {
           onChange((0,_wordpress_rich_text__WEBPACK_IMPORTED_MODULE_1__.removeFormat)(value, "imaszcurvy/low-highlight"));
