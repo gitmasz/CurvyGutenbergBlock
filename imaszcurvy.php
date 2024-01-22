@@ -60,6 +60,8 @@ final class iMaSzCurvy {
 			<!-- /wp:columns -->
 			<!-- /wp:imaszcurvy/curvyblock -->'
 		));
+		$script_url = plugins_url('build/index.js', __FILE__);
+		wp_enqueue_script('imaszcurvy-index', $script_url, array('wp-blocks', 'wp-element', 'wp-editor'));
 	}
 }
 

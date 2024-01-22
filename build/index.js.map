@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","mappings":";;;;;AAAAA,OAAO,CAACC,GAAG,CAAC,0CAA0C,CAAC,C","sources":["webpack://imaszcurvy/./src/index.js"],"sourcesContent":["console.log('Low-highlight text effect for rich text.');\r\n"],"names":["console","log"],"sourceRoot":""}
